@@ -41,6 +41,12 @@ async function run() {
         res.send(result)
        
     })
+    app.post('/bookTicket', async(req,res)=>{
+      const newTicket = req.body;
+     const result = await movieCollection.insertOne(newTicket);
+     console.log(result)
+     res.send(result)
+})
 
 
     // Send a ping to confirm a successful connection
